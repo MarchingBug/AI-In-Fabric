@@ -26,6 +26,10 @@ This notebook performs the following tasks:
 6. **Lakehouse Table Creation**
    - Extracts and saves unique values for `IssueCategory`, `DeskName`, and `AgentName` as separate Delta tables in the default Lakehouse.
    - Saves the final, processed call logs as a Delta table (`callLogs`) in the Lakehouse.
+  
+7. **Azure AI Search Document Ingestion Pipeline**
+   - This notebook processes PDF documents and creates a searchable vector database in Azure AI Search, designed for RAG (Retrieval-Augmented Generation) scenarios where you need to search through document content using both keywords and semantic similarity.
+   - Ingests PDF documents from Azure storage (OneLake/Fabric lakehouse), extracts their content using Azure Document Intelligence, chunks the text, generates embeddings, and indexes everything into Azure AI Search for hybrid search (keyword + vector search).
 
 > **In summary:**  
 > The notebook ingests, cleans, enriches, classifies, and saves call log data using both Pandas and Spark, leveraging AI capabilities to make the data ready for downstream analytics in Microsoft Fabric.
